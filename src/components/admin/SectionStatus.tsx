@@ -45,7 +45,7 @@ const SectionStatus: React.FC = () => {
           endOfDay.setHours(23, 59, 59, 999);
 
           // Get message logs for this section
-          const response = await fetch(`http://localhost:4000/send/messages?department=${dept.code}&dateFrom=${startOfDay.toISOString()}&dateTo=${endOfDay.toISOString()}`, {
+          const response = await fetch(`https://backend-obnm.onrender.com/send/messages?department=${dept.code}&dateFrom=${startOfDay.toISOString()}&dateTo=${endOfDay.toISOString()}`, {
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('token')}`
             }

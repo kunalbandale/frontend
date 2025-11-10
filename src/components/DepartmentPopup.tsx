@@ -37,7 +37,7 @@ const DepartmentPopup: React.FC<DepartmentPopupProps> = ({ isOpen, onClose, depa
     
     try {
       setLoading(true);
-      const response = await fetch(`http://localhost:4000/admin/sections/${department.code}/pdfs`, {
+      const response = await fetch(`https://backend-obnm.onrender.com/admin/sections/${department.code}/pdfs`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

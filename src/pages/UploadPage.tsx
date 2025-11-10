@@ -41,7 +41,7 @@ const UploadPage: React.FC = () => {
         return;
       }
       
-      const response = await fetch(`http://localhost:4000/admin/sections/${department}/logs`, {
+      const response = await fetch(`https://backend-obnm.onrender.com/admin/sections/${department}/logs`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -110,7 +110,7 @@ const UploadPage: React.FC = () => {
       formDataToSend.append('pdfFile', formData.pdfFile);
       formDataToSend.append('department', user?.department || '');
 
-      const response = await fetch('http://localhost:4000/send/section-upload', {
+      const response = await fetch('https://backend-obnm.onrender.com/send/section-upload', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`

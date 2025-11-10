@@ -51,7 +51,7 @@ const OutwardClerkDashboard: React.FC = () => {
       const departmentsWithCounts = await Promise.all(
         depts.map(async (dept) => {
           try {
-            const response = await fetch(`http://localhost:4000/admin/sections/${dept.code}/pdfs`, {
+            const response = await fetch(`https://backend-obnm.onrender.com/admin/sections/${dept.code}/pdfs`, {
               headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
               }
@@ -94,7 +94,7 @@ const OutwardClerkDashboard: React.FC = () => {
     try {
       setFilesLoading(true);
       resetFilePagination(); // Reset pagination when loading new files
-      const response = await fetch(`http://localhost:4000/admin/sections/${department.code}/pdfs`, {
+      const response = await fetch(`https://backend-obnm.onrender.com/admin/sections/${department.code}/pdfs`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

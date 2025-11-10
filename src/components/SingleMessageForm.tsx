@@ -91,7 +91,7 @@ const SingleMessageForm: React.FC<SingleMessageFormProps> = ({
       formPayload.append('department', selectedDepartment);
       formPayload.append('pdfId', (selectedPDF as any).id);
 
-      const response = await fetch('http://localhost:4000/send/clerk-send', {
+      const response = await fetch('https://backend-obnm.onrender.com/send/clerk-send', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`

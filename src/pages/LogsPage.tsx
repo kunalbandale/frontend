@@ -34,7 +34,7 @@ const LogsPage: React.FC = () => {
         return;
       }
       
-      const response = await fetch(`http://localhost:4000/admin/sections/${department}/pdfs`, {
+      const response = await fetch(`https://backend-obnm.onrender.com/admin/sections/${department}/pdfs`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

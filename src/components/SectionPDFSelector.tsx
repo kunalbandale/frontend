@@ -38,7 +38,7 @@ const SectionPDFSelector: React.FC<SectionPDFSelectorProps> = ({
     try {
       setLoading(true);
       setError('');
-      const response = await fetch(`http://localhost:4000/admin/sections/${selectedDepartment}/pdfs`, {
+      const response = await fetch(`https://backend-obnm.onrender.com/admin/sections/${selectedDepartment}/pdfs`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -72,7 +72,7 @@ const SectionPDFSelector: React.FC<SectionPDFSelectorProps> = ({
       formData.append('department', selectedDepartment);
       formData.append('pdfId', selectedPDF.id); // Send SectionPDF ID instead of filename
 
-      const response = await fetch('http://localhost:4000/send/clerk-send', {
+      const response = await fetch('https://backend-obnm.onrender.com/send/clerk-send', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`

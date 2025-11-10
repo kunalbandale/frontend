@@ -32,7 +32,7 @@ const LiveLogs: React.FC = () => {
     try {
       setLoading(true);
       
-      const response = await fetch(`http://localhost:4000/admin/admin-logs?limit=100`, {
+      const response = await fetch(`https://backend-obnm.onrender.com/admin/admin-logs?limit=100`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
